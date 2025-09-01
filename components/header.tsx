@@ -19,7 +19,7 @@ export function Header() {
     { name: "Contact", href: "#contact" },
   ]
 
-  const logoSrc = resolvedTheme === "dark" ? "/images/logo-dark-theme.png" : "/images/logo-full-new.png"
+  const logoSrc = resolvedTheme === "dark" ? "/images/logo-symbol.png" : "/images/9.png"
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">

@@ -15,12 +15,12 @@ export async function sendContactEmail(formData: FormData) {
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
     // Here you would integrate with your email service
-    console.log("Email would be sent to: officialrichvillegroup@gmail.com")
+    console.log("Email would be sent to: info@richvilleprojectlimited.com")
     console.log("From:", firstName, lastName, email)
     console.log("Phone:", phone)
     console.log("Message:", message)
 
-    return { success: true, message: "Thank you. Your message has been sent to RichVille Group Limited." }
+    return { success: true, message: "Thank you. Your message has been sent to RichVille Project Limited." }
   } catch (error) {
     return { success: false, message: "Failed to send message. Please try again." }
   }

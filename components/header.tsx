@@ -82,6 +82,8 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
+              {pathname === '/' && (
+            <>
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -92,6 +94,8 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
+              </>
+            )}
               <div className="px-3 py-2">
                 <Link
                   href="https://wa.me/2349020464872"

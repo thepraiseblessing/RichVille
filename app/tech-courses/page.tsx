@@ -327,7 +327,7 @@ export default function TechCoursesPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-serif text-lg px-8 py-3 bg-transparent"
+                  className="border-accent text-accent hover:bg-accent hover:text-accent font-serif text-lg px-8 py-3 bg-transparent"
                 >
                   Contact Us
                 </Button>

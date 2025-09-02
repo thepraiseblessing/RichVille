@@ -19,14 +19,14 @@ export default function PaymentPage() {
             Back to Courses
           </Link>
 
-          <div className="text-center">
-            <Image
+          <div className="text-center mt-13">
+            {/* <Image
               src="/images/logo-full.png"
               alt="Richville Project Limited"
               width={200}
               height={80}
               className="mx-auto mb-6"
-            />
+            /> */}
             <h1 className="text-4xl md:text-5xl font-sans font-bold text-foreground mb-4">Complete Your Enrollment</h1>
             <p className="text-xl text-muted-foreground font-serif leading-relaxed max-w-2xl mx-auto">
               Secure your spot in our premium tech courses and start your journey to success

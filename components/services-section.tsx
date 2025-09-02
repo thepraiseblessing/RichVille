@@ -44,7 +44,7 @@ export function ServicesSection() {
 
   return (
     <section id="services" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-sans font-bold text-foreground mb-6">
@@ -93,7 +93,7 @@ export function ServicesSection() {
 
                 <Button
                   variant="outline"
-                  className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground font-serif group/btn bg-transparent"
+                  className="w-auto border-accent text-accent hover:bg-transparent  hover:text-accent font-serif group/btn bg-transparent"
                   asChild
                 >
                   <Link

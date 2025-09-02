@@ -72,7 +72,7 @@ export function ContactSection() {
     {
       icon: Mail,
       title: "Email Us",
-      details: "officialrichvillegroup@gmail.com",
+      details: "info@richvilleprojectlimited.com",
       description: "Send us an email anytime",
     },
     {
@@ -91,7 +91,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {showSuccess && submitMessage && (
           <div className="fixed top-4 right-4 z-50 bg-accent text-accent-foreground px-6 py-4 rounded-lg shadow-lg border border-accent/20">
             <div className="flex items-center gap-2">
@@ -203,7 +203,7 @@ export function ContactSection() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     type="tel"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+234 (907) 123-4567"
                     className="border-border focus:border-accent focus:ring-accent/20"
                   />
                 </div>

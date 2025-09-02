@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Target, Users, TrendingUp, Award } from "lucide-react"
 import Image from "next/image"
+import aboutImage from '@/public/ofiice-image.png'
 
 export function AboutSection() {
   const values = [
@@ -32,11 +33,11 @@ export function AboutSection() {
 
   return (
     <section id="about" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-sans font-bold text-foreground mb-6">
-            About <span className="text-accent">Richville Group</span>
+            About <span className="text-accent">Richville Project Limited</span>
           </h2>
           <p className="text-xl text-muted-foreground font-serif max-w-3xl mx-auto leading-relaxed">
             We are a multi-dimensional group with a strong foundation in real estate, business development, technology,
@@ -48,8 +49,8 @@ export function AboutSection() {
         <div className="mb-16">
           <div className="flex justify-center">
             <Image
-              src="/images/office-interior.png"
-              alt="RichVille Group modern office interior"
+              src={aboutImage}
+              alt="RichVille Project modern office interior"
               width={800}
               height={600}
               className="rounded-[30px] shadow-lg object-cover max-w-full h-auto"

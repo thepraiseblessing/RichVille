@@ -148,22 +148,22 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const IconComponent = service.icon
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-muted/30">
       {/* Header spacing */}
       <div className="pt-20">
         {/* Back to Home Link */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-[1440px] mx-auto mt-8 px-4 sm:px-6 lg:px-8 py-4">
           <Link
             href="/#services"
             className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-serif"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Services
+            Back
           </Link>
         </div>
 
         {/* Service Header */}
-        <section className="py-12 bg-muted/30">
+        <section className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -179,7 +179,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
         {/* Service Details */}
         <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Overview */}
               <Card className="h-fit">
@@ -236,163 +236,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               </Card>
             </div>
 
-            {/* Property Management Tips Section - Only for Real Estate Service */}
-            {slug === "real-estate-investment-property-management" && (
-              <div className="mt-16">
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-4">
-                    Property Management Insights
-                  </h2>
-                  <p className="text-xl text-muted-foreground font-serif max-w-3xl mx-auto">
-                    Master the art of property management with expert tips for landlords and tenants
-                  </p>
-                </div>
-
-                {/* What is Property Management */}
-                <Card className="mb-8">
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-sans text-foreground">What is Property Management?</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground font-serif leading-relaxed mb-4">
-                      Property management is the comprehensive oversight and operation of real estate properties on behalf of property owners. 
-                      It involves everything from tenant screening and rent collection to maintenance coordination and legal compliance. 
-                      Effective property management maximizes rental income while preserving and enhancing property value.
-                    </p>
-                    <p className="text-muted-foreground font-serif leading-relaxed">
-                      Whether you're a seasoned landlord or just starting your property investment journey, understanding proper 
-                      management principles is crucial for long-term success and profitability in real estate.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-                  {/* Tips for Landlords */}
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-2xl font-sans text-foreground flex items-center gap-2">
-                        <Home className="h-6 w-6 text-accent" />
-                        Tips for Landlords
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-4">
-                        <div className="border-l-4 border-accent pl-4">
-                          <h4 className="font-semibold text-foreground mb-2">Screen Tenants Thoroughly</h4>
-                          <p className="text-muted-foreground font-serif text-sm">
-                            Conduct comprehensive background checks, verify employment, and check references to find reliable tenants.
-                          </p>
-                        </div>
-                        <div className="border-l-4 border-accent pl-4">
-                          <h4 className="font-semibold text-foreground mb-2">Maintain Your Property</h4>
-                          <p className="text-muted-foreground font-serif text-sm">
-                            Regular maintenance preserves property value and keeps tenants satisfied, reducing vacancy rates.
-                          </p>
-                        </div>
-                        <div className="border-l-4 border-accent pl-4">
-                          <h4 className="font-semibold text-foreground mb-2">Know Your Legal Rights</h4>
-                          <p className="text-muted-foreground font-serif text-sm">
-                            Understand local rental laws, tenant rights, and eviction procedures to protect your investment.
-                          </p>
-                        </div>
-                        <div className="border-l-4 border-accent pl-4">
-                          <h4 className="font-semibold text-foreground mb-2">Set Competitive Rent Prices</h4>
-                          <p className="text-muted-foreground font-serif text-sm">
-                            Research market rates regularly and adjust pricing to maximize income while maintaining occupancy.
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Tips for Tenants */}
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-2xl font-sans text-foreground flex items-center gap-2">
-                        <Users className="h-6 w-6 text-accent" />
-                        Tips for Tenants
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-4">
-                        <div className="border-l-4 border-accent pl-4">
-                          <h4 className="font-semibold text-foreground mb-2">Document Everything</h4>
-                          <p className="text-muted-foreground font-serif text-sm">
-                            Take photos of the property condition and keep records of all communications with your landlord.
-                          </p>
-                        </div>
-                        <div className="border-l-4 border-accent pl-4">
-                          <h4 className="font-semibold text-foreground mb-2">Pay Rent on Time</h4>
-                          <p className="text-muted-foreground font-serif text-sm">
-                            Consistent, timely payments build trust and may help in future rent negotiations or references.
-                          </p>
-                        </div>
-                        <div className="border-l-4 border-accent pl-4">
-                          <h4 className="font-semibold text-foreground mb-2">Report Issues Promptly</h4>
-                          <p className="text-muted-foreground font-serif text-sm">
-                            Notify your landlord of maintenance issues early to prevent small problems from becoming major repairs.
-                          </p>
-                        </div>
-                        <div className="border-l-4 border-accent pl-4">
-                          <h4 className="font-semibold text-foreground mb-2">Know Your Tenant Rights</h4>
-                          <p className="text-muted-foreground font-serif text-sm">
-                            Understand your rights regarding privacy, security deposits, and habitability standards.
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                {/* WhatsApp Community CTA */}
-                <Card className="bg-accent/5 border-accent/20">
-                  <CardContent className="pt-8 text-center">
-                    <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <MessageCircle className="h-8 w-8 text-accent" />
-                    </div>
-                    <h3 className="text-2xl font-sans font-semibold text-foreground mb-4">
-                      Join Our Exclusive Landlords Community
-                    </h3>
-                    <p className="text-muted-foreground font-serif mb-6 max-w-2xl mx-auto">
-                      Connect with fellow property owners, get expert advice, and access exclusive resources to maximize your 
-                      property investment returns. Our WhatsApp community provides ongoing support, market insights, and 
-                      networking opportunities for serious landlords.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-                      <div className="flex items-center gap-2 text-muted-foreground font-serif">
-                        <div className="w-2 h-2 bg-accent rounded-full"></div>
-                        <span>Weekly market updates</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-muted-foreground font-serif">
-                        <div className="w-2 h-2 bg-accent rounded-full"></div>
-                        <span>Expert property management tips</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-muted-foreground font-serif">
-                        <div className="w-2 h-2 bg-accent rounded-full"></div>
-                        <span>Networking with successful landlords</span>
-                      </div>
-                    </div>
-                    <Button
-                      size="lg"
-                      className="bg-accent text-accent-foreground hover:bg-accent/90 font-serif text-lg px-8 py-3"
-                      asChild
-                    >
-                      <Link
-                        href="https://wa.me/2349020464872?text=Hi%20RichVille%20Group,%20I'm%20interested%20in%20joining%20the%20exclusive%20landlords%20WhatsApp%20community."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <MessageCircle className="mr-2 h-5 w-5" />
-                        Join Landlords Community
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-
             {/* General CTA Section */}
-            {/* <div className="mt-16 text-center">
+            <div className="mt-16 text-center">
               <Card className="max-w-2xl mx-auto">
                 <CardContent className="pt-8">
                   <h3 className="text-2xl font-sans font-semibold text-foreground mb-4">Ready to Get Started?</h3>
@@ -415,7 +260,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   </Button>
                 </CardContent>
               </Card>
-            </div> */}
+            </div>
           </div>
         </section>
       </div>

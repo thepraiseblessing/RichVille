@@ -22,7 +22,7 @@ export default function PaymentPage() {
           <div className="text-center">
             <Image
               src="/images/logo-full.png"
-              alt="Richville Group Limited"
+              alt="Richville Project Limited"
               width={200}
               height={80}
               className="mx-auto mb-6"
@@ -83,7 +83,7 @@ export default function PaymentPage() {
                   asChild
                 >
                   <Link
-                    href="https://selar.co/richville-tech-courses"
+                    href="https://selar.com/m/richvillepldigitalstore"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"

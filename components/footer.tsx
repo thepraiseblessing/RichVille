@@ -14,6 +14,7 @@ export function Footer() {
     { name: "Services", href: "#services" },
     { name: "Contact", href: "#contact" },
     { name: "RichVille Tech Courses", href: "/tech-courses" },
+    { name: "Landlords Community", href: "/landlords-community" },
   ]
 
   const services = [
@@ -35,15 +36,15 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="mb-6">
               <Image
-                src={theme === "dark" ? "/images/logo-footer-dark-new.png" : "/images/logo-symbol-new.png"}
-                alt="Richville Group Limited"
+                src={theme === "dark" ? "/images/9.png" : "/images/logo-symbol.png"}
+                alt="Richville Project Limited"
                 width={300}
                 height={300}
                 className="h-24 w-auto"
@@ -58,7 +59,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-primary-foreground/80">
                 <Mail className="h-4 w-4 text-accent" />
-                <span className="font-serif">officialrichvillegroup@gmail.com</span>
+                <span className="font-serif">info@richvilleprojectlimited.com</span>
               </div>
               <div className="flex items-center gap-3 text-primary-foreground/80">
                 <Phone className="h-4 w-4 text-accent" />
@@ -121,7 +122,7 @@ export function Footer() {
 
             {/* Copyright */}
             <div className="text-primary-foreground/60 font-serif text-sm text-center md:text-right">
-              <p>&copy; {new Date().getFullYear()} Richville Group Limited. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Richville Project Limited. All rights reserved.</p>
               <p className="mt-1">Empowering Lives for Purpose and Financial Freedom</p>
             </div>
           </div>

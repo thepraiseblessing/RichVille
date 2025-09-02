@@ -10,8 +10,8 @@ export function HeroSection() {
     >
       {/* Background Pattern */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl lg:max-w-[90%] mx-auto">
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-sans font-bold text-foreground mb-6 leading-tight">
             Empowering Lives for <span className="text-accent">Purpose</span> and{" "}

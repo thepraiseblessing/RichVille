@@ -7,23 +7,33 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useTheme } from "next-themes"
+import { usePathname } from "next/navigation"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { theme, resolvedTheme } = useTheme()
+  const pathname = usePathname()
 
   const navigation = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
+    { name: "Landlords", href: "/landlords-community" },
     { name: "Contact", href: "#contact" },
   ]
+
+  const navigation2 = [
+    // {name: "Home", href: "/"},
+
+
+  ]
+  
 
   const logoSrc = resolvedTheme === "dark" ? "/images/logo-symbol.png" : "/images/9.png"
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -40,6 +50,8 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            {pathname === '/' && (
+            <>
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -49,6 +61,8 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
+            </> 
+           ) }
             <Link href="https://wa.me/2349020464872" target="_blank" rel="noopener noreferrer">
               <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-serif">Get In Touch</Button>
             </Link>

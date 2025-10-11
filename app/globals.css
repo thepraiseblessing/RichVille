@@ -1,135 +1,197 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
-  /* Updated color tokens to match Richville brand: gold, white, black */
-  --background: oklch(1 0 0); /* White background */
-  --foreground: oklch(0.145 0 0); /* Black text */
-  --card: oklch(1 0 0); /* White cards */
-  --card-foreground: oklch(0.145 0 0); /* Black text on cards */
-  --popover: oklch(1 0 0); /* White popover */
-  --popover-foreground: oklch(0.145 0 0); /* Black text on popover */
-  --primary: oklch(0.145 0 0); /* Black primary elements */
-  --primary-foreground: oklch(1 0 0); /* White text on primary */
-  /* Updated to version 20 gold color */
-  --secondary: oklch(0.8 0.15 85); /* Version 20 gold secondary elements */
-  --secondary-foreground: oklch(0.145 0 0); /* Black text on secondary */
-  --muted: oklch(0.97 0 0); /* Light gray muted */
-  --muted-foreground: oklch(0.556 0 0); /* Gray muted text */
-  --accent: oklch(0.8 0.15 85); /* Version 20 gold accent */
-  --accent-foreground: oklch(0.145 0 0); /* Black text on accent */
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.922 0 0); /* Light gray border */
-  --input: oklch(1 0 0); /* White input background */
-  --ring: oklch(0.8 0.15 85 / 0.5); /* Version 20 gold focus ring */
-  --chart-1: oklch(0.8 0.15 85); /* Version 20 gold chart color */
-  --chart-2: oklch(0.145 0 0); /* Black chart color */
-  --chart-3: oklch(0.556 0 0); /* Gray chart color */
-  --chart-4: oklch(0.97 0 0); /* Light gray chart color */
-  --chart-5: oklch(0.82 0.13 85); /* Slightly lighter version of version 20 gold */
-  --radius: 0.625rem;
-  --sidebar: oklch(0.145 0 0); /* Black sidebar */
-  --sidebar-foreground: oklch(1 0 0); /* White sidebar text */
-  --sidebar-primary: oklch(0.8 0.15 85); /* Version 20 gold sidebar primary */
-  --sidebar-primary-foreground: oklch(0.145 0 0); /* Black text on sidebar primary */
-  --sidebar-accent: oklch(0.8 0.15 85); /* Version 20 gold sidebar accent */
-  --sidebar-accent-foreground: oklch(0.145 0 0); /* Black text on sidebar accent */
-  --sidebar-border: oklch(0.3 0 0); /* Dark gray sidebar border */
-  --sidebar-ring: oklch(0.8 0.15 85 / 0.5); /* Version 20 gold sidebar focus ring */
-  --font-raleway: "Raleway", sans-serif;
-  --font-geist: "Geist", sans-serif;
-  --font-manrope: "Manrope", serif;
+  --primary-gold: #B8984A;
+  --secondary-gold: #D4AF37;
+  --accent-gold: #C9A961;
+  --dark-bg: #000000;
+  --dark-card: #1a1a1a;
+  --light-bg: #ffffff;
+  --light-card: #f8f9fa;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --text-gray: #666666;
+  --text-gray-light: #b0b0b0;
+  --border-light: #e0e0e0;
+  --border-dark: #333333;
 }
 
-.dark {
-  /* Dark mode with inverted colors maintaining brand consistency */
-  --background: oklch(0.145 0 0); /* Black background */
-  --foreground: oklch(1 0 0); /* White text */
-  --card: oklch(0.2 0 0); /* Dark gray cards */
-  --card-foreground: oklch(1 0 0); /* White text on cards */
-  --popover: oklch(0.2 0 0); /* Dark gray popover */
-  --popover-foreground: oklch(1 0 0); /* White text on popover */
-  --primary: oklch(1 0 0); /* White primary elements */
-  --primary-foreground: oklch(0.145 0 0); /* Black text on primary */
-  /* Updated dark mode to version 20 gold color */
-  --secondary: oklch(0.8 0.15 85); /* Version 20 gold secondary elements */
-  --secondary-foreground: oklch(0.145 0 0); /* Black text on secondary */
-  --muted: oklch(0.3 0 0); /* Dark gray muted */
-  --muted-foreground: oklch(0.7 0 0); /* Light gray muted text */
-  --accent: oklch(0.8 0.15 85); /* Version 20 gold accent */
-  --accent-foreground: oklch(0.145 0 0); /* Black text on accent */
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.3 0 0); /* Dark gray border */
-  --input: oklch(0.2 0 0); /* Dark gray input background */
-  --ring: oklch(0.8 0.15 85 / 0.5); /* Version 20 gold focus ring */
-  --chart-1: oklch(0.8 0.15 85); /* Version 20 gold chart color */
-  --chart-2: oklch(1 0 0); /* White chart color */
-  --chart-3: oklch(0.7 0 0); /* Light gray chart color */
-  --chart-4: oklch(0.3 0 0); /* Dark gray chart color */
-  --chart-5: oklch(0.82 0.13 85); /* Slightly lighter version of version 20 gold */
-  --sidebar: oklch(0.1 0 0); /* Very dark sidebar */
-  --sidebar-foreground: oklch(1 0 0); /* White sidebar text */
-  --sidebar-primary: oklch(0.8 0.15 85); /* Version 20 gold sidebar primary */
-  --sidebar-primary-foreground: oklch(0.145 0 0); /* Black text on sidebar primary */
-  --sidebar-accent: oklch(0.8 0.15 85); /* Version 20 gold sidebar accent */
-  --sidebar-accent-foreground: oklch(0.145 0 0); /* Black text on sidebar accent */
-  --sidebar-border: oklch(0.3 0 0); /* Dark gray sidebar border */
-  --sidebar-ring: oklch(0.8 0.15 85 / 0.5); /* Version 20 gold sidebar focus ring */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--light-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+body.dark-mode {
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-gold);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-gray);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+body.dark-mode .section-subtitle {
+  color: var(--text-gray-light);
+}
+
+/* === BUTTONS === */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--primary-gold);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background: var(--secondary-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(184, 152, 74, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-gold);
+  border: 2px solid var(--primary-gold);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-gold);
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+/* === THEME TOGGLE BUTTON === */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--border-light);
+  background: var(--light-card);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--primary-gold);
+  color: var(--text-light);
+}
+
+body.dark-mode .theme-toggle {
+  background: var(--dark-card);
+  border: 1px solid var(--border-dark);
+  color: var(--text-light);
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: var(--secondary-gold);
+  color: var(--text-dark);
+}
+
+/* === CARDS === */
+.card {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+body.dark-mode .card {
+  background: var(--dark-card);
+  border-color: var(--border-dark);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* === GRID SYSTEM === */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 1rem;
   }
-  body {
-    @apply bg-background text-foreground font-sans;
+
+  .section-title {
+    font-size: 2rem;
   }
-}
 
-@theme inline {
-  /* Updated font configuration for Raleway */
-  --font-sans: var(--font-raleway);
-  --font-serif: var(--font-raleway);
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  .section-subtitle {
+    font-size: 1rem;
+  }
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
 }

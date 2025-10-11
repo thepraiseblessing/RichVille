@@ -1,9 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Raleway } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
+import ThemeProvider from "@/components/theme-provider"
 import "./globals.css"
-import { Footer } from "@/components/footer"
+import Footer from "@/components/footer"
 import { Header } from "@/components/header"
 
 const raleway = Raleway({
@@ -59,11 +59,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${raleway.variable} antialiased`} suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider>
           <Header/>
           {children}
-                  <Footer />
-
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

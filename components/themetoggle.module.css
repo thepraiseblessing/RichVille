@@ -1,0 +1,45 @@
+.themeToggleBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;  /* slightly bigger button */
+  width: 2.25rem;
+  border-radius: 9999px; /* full rounded */
+  transition: all 0.3s ease-in-out;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.themeToggleBtn:hover {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+/* Sun icon */
+.sunIcon {
+  height: 1.2rem;
+  width: 1.2rem;
+  transform: rotate(0deg) scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Moon icon */
+.moonIcon {
+  height: 1.2rem;
+  width: 1.2rem;
+  position: absolute;
+  transform: rotate(90deg) scale(0);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark mode: swap icons smoothly */
+:global(html[data-theme="dark"]) .sunIcon {
+  transform: rotate(-90deg) scale(0);
+  opacity: 0;
+}
+
+:global(html[data-theme="dark"]) .moonIcon {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}

@@ -108,7 +108,7 @@ export default function PaymentPage() {
               </CardHeader>
               <CardContent>
                 <Button variant="outline" size="lg" className="w-full font-serif bg-transparent" asChild>
-                  <Link href="/#contact">Contact Support</Link>
+                  <Link href="/contact">Contact Support</Link>
                 </Button>
               </CardContent>
             </Card>

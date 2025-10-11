@@ -1,0 +1,238 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pageHeader h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.pageHeader p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.introSection {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.introText {
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+body.dark-mode .introText {
+  color: var(--text-gray-light);
+}
+
+.introButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.benefitIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.card p {
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+body.dark-mode .card p {
+  color: var(--text-gray-light);
+}
+
+.tipsSection {
+  margin-top: 4rem;
+}
+
+.tipCard {
+  background: var(--light-card);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+}
+
+body.dark-mode .tipCard {
+  background: var(--dark-card);
+  border-color: var(--border-dark);
+}
+
+.tipCard h3 {
+  color: var(--primary-gold);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.tipCard h4 {
+  color: var(--primary-gold);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.tipCard p {
+  color: var(--text-gray);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+body.dark-mode .tipCard p {
+  color: var(--text-gray-light);
+}
+
+.testimonialsSection {
+  margin-top: 4rem;
+}
+
+.testimonialCard {
+  background: var(--light-card);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .testimonialCard {
+  background: var(--dark-card);
+  border-color: var(--border-dark);
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .testimonialCard:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.testimonialText {
+  font-style: italic;
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+body.dark-mode .testimonialText {
+  color: var(--text-gray-light);
+}
+
+.testimonialAuthor {
+  font-weight: bold;
+  color: var(--primary-gold);
+  margin-bottom: 0.3rem;
+}
+
+.testimonialLocation {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+body.dark-mode .testimonialLocation {
+  color: var(--text-gray-light);
+}
+
+.ctaSection {
+  background: linear-gradient(135deg, var(--dark-bg), #2a2a2a);
+  color: var(--text-light);
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(184, 152, 74, 0.15), transparent 50%);
+  pointer-events: none;
+}
+
+.ctaSection h2 {
+  color: var(--primary-gold);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaSection p {
+  color: var(--text-gray-light);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaFeatures {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 3rem 1rem;
+  }
+
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+
+  .pageHeader p {
+    font-size: 1.1rem;
+  }
+
+  .introButtons {
+    flex-direction: column;
+  }
+
+  .ctaSection {
+    padding: 3rem 1rem;
+  }
+
+  .ctaSection h2 {
+    font-size: 1.8rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+  }
+
+  .ctaButtons a {
+    width: 100%;
+  }
+}

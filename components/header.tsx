@@ -8,18 +8,20 @@ import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useTheme } from "next-themes"
 import { usePathname } from "next/navigation"
+import styles from "./Header.module.css"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { theme, resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const pathname = usePathname()
 
   const navigation = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Landlords", href: "/landlords-community" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Blog", href: "/blog" },
+    { name: "Landlords Community", href: "/landlords-community" },
+    { name: "Contact", href: "/contact" },
   ]
 
   const navigation2 = [
@@ -32,86 +34,64 @@ export function Header() {
   const logoSrc = resolvedTheme === "dark" ? "/images/logo-symbol.png" : "/images/9.png"
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <Image
-                src={logoSrc || "/placeholder.svg"}
-                alt="Richville Group Limited"
-                width={400}
-                height={89}
-                className="h-20 w-auto"
-              />
-            </Link>
-          </div>
+    <header className={styles.nav}>
+      <div className={styles.navContainer}>
+        {/* Logo */}
+        <Link href="/" className={styles.logo}>
+          <Image src={logoSrc} alt="Richville Group Limited" width={150} height={50} />
+        </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {pathname === '/' && (
-            <>
+        {/* Desktop Navigation */}
+        <nav className={`${styles.navRight} hidden md:flex`}>
+          <ul className={styles.navLinks}>
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-accent transition-colors duration-200 font-serif"
-              >
-                {item.name}
-              </Link>
-            ))}
-            </> 
-           ) }
-            <Link href="https://wa.me/2349020464872" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-serif">Get In Touch</Button>
-            </Link>
-            <ThemeToggle />
-          </nav>
-
-          {/* Mobile menu button and theme toggle */}
-          <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
-            <Button variant="ghost" size="sm" onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-foreground">
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
-              {pathname === '/' && (
-            <>
-              {navigation.map((item) => (
+              <li key={item.name}>
                 <Link
-                  key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-foreground hover:text-accent transition-colors duration-200 font-serif"
-                  onClick={() => setIsMenuOpen(false)}
+                  className={pathname === item.href ? "activeLink" : ""}
                 >
                   {item.name}
                 </Link>
-              ))}
-              </>
-            )}
-              <div className="px-3 py-2">
-                <Link
-                  href="https://wa.me/2349020464872"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-serif">
-                    Get In Touch
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
+              </li>
+            ))}
+          </ul>
+          <Link href="https://wa.me/2349020464872" target="_blank" rel="noopener noreferrer">
+            <Button className="btn btn-primary">
+             Get In Touch
+            </Button>
+          </Link>
+          <ThemeToggle />
+        </nav>
+
+        {/* Mobile Toggle */}
+        <button
+          className={`${styles.menuToggle} md:hidden`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <nav className={`${styles.navLinks} active md:hidden`}>
+          {navigation.map((item) => (
+            <Link key={item.name} href={item.href} onClick={() => setIsMenuOpen(false)}>
+              {item.name}
+            </Link>
+          ))}
+          <Link
+            href="https://wa.me/2349020464872"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-serif">
+              Get In Touch
+            </Button>
+          </Link>
+        </nav>
+      )}
     </header>
   )
 }

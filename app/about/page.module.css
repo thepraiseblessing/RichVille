@@ -1,0 +1,135 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pageHeader h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.pageHeader p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.contentSection {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.contentSection h2 {
+  color: var(--primary-gold);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.contentSection p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+  font-size: 1.05rem;
+}
+
+body.dark-mode .contentSection p {
+  color: var(--text-gray-light);
+}
+
+.valuesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.valueItem {
+  background: var(--light-card);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .valueItem {
+  background: var(--dark-card);
+  border-color: var(--border-dark);
+}
+
+.valueItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .valueItem:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.valueItem h3 {
+  color: var(--primary-gold);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.valueItem p {
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+body.dark-mode .valueItem p {
+  color: var(--text-gray-light);
+}
+
+.approachList {
+  margin: 2rem 0;
+  padding-left: 2rem;
+  color: var(--text-gray);
+  line-height: 2;
+}
+
+body.dark-mode .approachList {
+  color: var(--text-gray-light);
+}
+
+.approachList li {
+  margin-bottom: 0.8rem;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 3rem 1rem;
+  }
+
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+
+  .pageHeader p {
+    font-size: 1.1rem;
+  }
+
+  .contentSection {
+    padding: 0 1rem;
+  }
+
+  .contentSection h2 {
+    font-size: 1.5rem;
+  }
+
+  .valuesList {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,149 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pageHeader h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.pageHeader p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.contactIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.contactDesc {
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+body.dark-mode .contactDesc {
+  color: var(--text-gray-light);
+}
+
+.contactLink {
+  color: var(--primary-gold);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.contactLink:hover {
+  color: var(--secondary-gold);
+}
+
+.location {
+  color: var(--primary-gold);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.officeHours {
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.hoursContent {
+  margin-top: 2rem;
+}
+
+.hoursContent p {
+  color: var(--text-gray);
+  line-height: 2;
+  font-size: 1.1rem;
+}
+
+body.dark-mode .hoursContent p {
+  color: var(--text-gray-light);
+}
+
+.ctaSection {
+  background: var(--light-card);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 4rem auto 0;
+  text-align: center;
+  border: 1px solid var(--border-light);
+}
+
+body.dark-mode .ctaSection {
+  background: var(--dark-card);
+  border-color: var(--border-dark);
+}
+
+.ctaSection h2 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.ctaSection p {
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+body.dark-mode .ctaSection p {
+  color: var(--text-gray-light);
+}
+
+.ctaSubtext {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 3rem 1rem;
+  }
+
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+
+  .pageHeader p {
+    font-size: 1.1rem;
+  }
+
+  .ctaSection {
+    padding: 2rem 1rem;
+  }
+
+  .ctaSection h2 {
+    font-size: 1.8rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+  }
+
+  .ctaButtons a {
+    width: 100%;
+  }
+}

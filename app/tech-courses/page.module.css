@@ -1,0 +1,157 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pageHeader h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.pageHeader p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.featureCard {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--light-card);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .featureCard {
+  background: var(--dark-card);
+  border-color: var(--border-dark);
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .featureCard:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+  color: var(--primary-gold);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.featureCard p {
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+body.dark-mode .featureCard p {
+  color: var(--text-gray-light);
+}
+
+.courseIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.levelBadge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.courseDesc {
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+body.dark-mode .courseDesc {
+  color: var(--text-gray-light);
+}
+
+.ctaSection {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--dark-bg), #2a2a2a);
+  border-radius: 15px;
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(184, 152, 74, 0.15), transparent 50%);
+  pointer-events: none;
+}
+
+.ctaSection h2 {
+  color: var(--primary-gold);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaSection p {
+  color: var(--text-gray-light);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 3rem 1rem;
+  }
+
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+
+  .pageHeader p {
+    font-size: 1.1rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaSection h2 {
+    font-size: 1.8rem;
+  }
+}

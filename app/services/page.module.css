@@ -1,0 +1,169 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--dark-bg), #2a2a2a);
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(184, 152, 74, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.pageHeader h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pageHeader p {
+  position: relative;
+  z-index: 1;
+  color: var(--text-gray-light);
+  font-size: 1.2rem;
+}
+
+/* Process Section */
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.processStep {
+  text-align: center;
+  padding: 2rem;
+  background: var(--light-card);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .processStep {
+  background: var(--dark-card);
+  border-color: var(--border-dark);
+}
+
+.processStep:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(184, 152, 74, 0.2);
+}
+
+.stepNumber {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem;
+}
+
+.processStep h3 {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.processStep p {
+  color: var(--text-gray);
+  line-height: 1.8;
+}
+
+body.dark-mode .processStep p {
+  color: var(--text-gray-light);
+}
+
+/* CTA Section */
+.ctaSection {
+  background: linear-gradient(135deg, var(--dark-bg), #2a2a2a);
+  color: var(--text-light);
+  text-align: center;
+  padding: 4rem 2rem;
+  margin: 4rem 0;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(184, 152, 74, 0.1), transparent 50%);
+  pointer-events: none;
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  color: var(--primary-gold);
+}
+
+.ctaSection p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .card ul {
+  color: var(--text-gray-light);
+}
+
+body.dark-mode section[style*="background: var(--light-card)"] {
+  background: var(--dark-card) !important;
+}
+
+body.dark-mode section[style*="background: var(--light-card)"] > div > div {
+  background: var(--dark-bg) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+  
+  .pageHeader p {
+    font-size: 1rem;
+  }
+
+  .ctaSection h2 {
+    font-size: 2rem;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stepNumber {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
